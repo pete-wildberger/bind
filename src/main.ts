@@ -1,6 +1,6 @@
-import { App } from "./client/app/App.class";
+import { App } from './client/app/App.class';
 
 (function () {
-  console.log("help");
-  const app = new App();
+	console.log('help');
+	const app = new App();
 })();
