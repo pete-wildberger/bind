@@ -1,14 +1,8 @@
 import { HERO_IMG } from '../../assets';
+import { Character } from './Character.class';
 
-export class Hero {
-	public sprite: HTMLImageElement;
+export class Hero extends Character {
 	constructor() {
-		this.sprite = this.loadSprite(HERO_IMG);
-	}
-
-	private loadSprite(url: string): HTMLImageElement {
-		const img = new Image();
-		img.src = url;
-		return img;
+		super(0, 0, 48, 48, HERO_IMG);
 	}
 }
