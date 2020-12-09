@@ -1,17 +1,26 @@
 import { Hero } from '../characters/Hero.class';
 
 export class App {
+	private canvas: HTMLCanvasElement;
 	private context: CanvasRenderingContext2D;
 	private characters: any[] = [];
 	constructor() {
-		const canvas = this.setCanvas();
-		this.context = this.setContext(canvas);
+		this.canvas = this.setCanvas();
+		this.context = this.setContext(this.canvas);
 		this.characters = [this.loadHero()];
 		console.log(this.characters);
 	}
 
 	private loadHero() {
 		return new Hero();
+	}
+
+	private play() {
+		window.requestAnimationFrame(this.render.bind(this));
+	}
+
+	private render() {
+		this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	}
 
 	private setCanvas(): HTMLCanvasElement {
