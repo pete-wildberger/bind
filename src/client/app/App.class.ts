@@ -11,6 +11,8 @@ export class App {
 		console.log(this.characters);
 	}
 
+	private handleInput() {}
+
 	private loadHero() {
 		return new Hero();
 	}
